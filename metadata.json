@@ -1,0 +1,14 @@
+{
+  "name": "puppet-openstack_zeromq",
+  "version": "0.1.0",
+  "author": "Harish Kumar <hkumar@d4devops.org>",
+  "summary": "To configure openstack zeromq",
+  "license": "Apache 2.0",
+  "source": "https://github.com/jiocloud/puppet-openstack_zeromq",
+  "project_page": "https://github.com/jiocloud/puppet-openstack_zeromq",
+  "issues_url": "https://github.com/jiocloud/puppet-openstack_zeromq/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
