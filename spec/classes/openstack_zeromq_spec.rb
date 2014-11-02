@@ -157,6 +157,7 @@ describe 'openstack_zeromq' do
         :nova_consoleauth_nodes => ['consoleauth1','consoleauth2','consoleauth3'],
         :nova_conductor_nodes   => ['conductor1','conductor2','conductor3'],
         :nova_cert_nodes        => ['cert1','cert2','cert3'],
+        :nova_compute_nodes     => ['compute1','compute2'],
       }
     end
     it do
@@ -177,6 +178,9 @@ describe 'openstack_zeromq' do
       })
       should contain_matchmakerring_config('cert').with({
         'value' => ['cert1','cert2','cert3'],
+      })
+      should contain_matchmakerring_config('compute').with({
+        'value' => ['compute1','compute2'],
       })
     end
   end

@@ -64,6 +64,9 @@
 #   Nova cert nodes to add in matchmaker ring. Default: $nova_nodes,
 #   Default: $nova_nodes
 #
+# [*nova_compute_nodes*]
+#   Nova compute nodes to add in matchmaker ring
+#   Default: $nova_nodes
 # Sample Usage:
 #
 #   include 'openstack_zeromq':
@@ -87,6 +90,7 @@ class openstack_zeromq(
   $nova_consoleauth_nodes = [],
   $nova_conductor_nodes   = [],
   $nova_cert_nodes        = [],
+  $nova_compute_nodes     = [],
 ) {
 
   ##
@@ -108,6 +112,7 @@ class openstack_zeromq(
   validate_array($nova_consoleauth_nodes)
   validate_array($nova_conductor_nodes)
   validate_array($nova_cert_nodes)
+  validate_array($nova_compute_nodes)
 
   ##
   # Anchors
@@ -229,6 +234,10 @@ class openstack_zeromq(
 
   if ! empty($nova_cert_nodes_orig) {
     matchmakerring_config { 'cert': value => $nova_cert_nodes_orig }
+  }
+
+  if ! empty($nova_compute_nodes) {
+    matchmakerring_config { 'compute': value => $nova_compute_nodes }
   }
 
   ##
