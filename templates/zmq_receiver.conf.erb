@@ -1,0 +1,9 @@
+[DEFAULT]
+debug= <%= @debug.to_s.capitalize %>
+rpc_zmq_bind_address = <%= @bind_address %>
+rpc_zmq_contexts = <%= @contexts %>
+rpc_zmq_host = <%= @hostname %>
+rpc_zmq_ipc_dir = <%= @ipc_dir %>
+rpc_zmq_matchmaker = <%= @matchmaker %>
+rpc_zmq_port = <%= @port %>
+ringfile = /etc/oslo/matchmaker_ring.json
